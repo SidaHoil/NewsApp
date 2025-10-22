@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F247C322EA7CBA200F2F79C /* SwiftHelperInit in Frameworks */ = {isa = PBXBuildFile; productRef = 1F247C312EA7CBA200F2F79C /* SwiftHelperInit */; };
 		1F403F4A2E9FAF0C00E6A4B9 /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F403F492E9FAF0C00E6A4B9 /* NewsResponse.swift */; };
 		1F403F4C2E9FB03400E6A4B9 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F403F4B2E9FB03400E6A4B9 /* NetworkServiceProtocol.swift */; };
 		1F403F4E2E9FB19700E6A4B9 /* EnvironmentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F403F4D2E9FB19700E6A4B9 /* EnvironmentConfig.swift */; };
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F247C322EA7CBA200F2F79C /* SwiftHelperInit in Frameworks */,
 				2AE5EC5AF1643662E85F1BB0 /* Pods_News.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +280,9 @@
 			dependencies = (
 			);
 			name = News;
+			packageProductDependencies = (
+				1F247C312EA7CBA200F2F79C /* SwiftHelperInit */,
+			);
 			productName = News;
 			productReference = 1F66AE942E9F5A8A0083C791 /* News Dev.app */;
 			productType = "com.apple.product-type.application";
@@ -353,6 +358,9 @@
 				Base,
 			);
 			mainGroup = 1F66AE8B2E9F5A8A0083C791;
+			packageReferences = (
+				1F247C302EA7CBA100F2F79C /* XCRemoteSwiftPackageReference "SwiftHelperInit" */,
+			);
 			productRefGroup = 1F66AE952E9F5A8A0083C791 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1029,6 +1037,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1F247C302EA7CBA100F2F79C /* XCRemoteSwiftPackageReference "SwiftHelperInit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SidaHoil/SwiftHelperInit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F247C312EA7CBA200F2F79C /* SwiftHelperInit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1F247C302EA7CBA100F2F79C /* XCRemoteSwiftPackageReference "SwiftHelperInit" */;
+			productName = SwiftHelperInit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		1F66AEA02E9F5A8A0083C791 /* News.xcdatamodeld */ = {

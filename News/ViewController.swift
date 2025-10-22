@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     
     private func setupView() {
         title = "Top Headlines"
+        tableView.separatorStyle = .none
         tableView.backgroundColor = .systemBackground
         tableView.register(NewsCell.self, forCellReuseIdentifier: cellId)
         tableView.rowHeight = UITableView.automaticDimension

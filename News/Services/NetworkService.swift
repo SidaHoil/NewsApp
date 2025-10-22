@@ -15,7 +15,7 @@ class NetworkService: NetworkServiceProtocol {
         let endPoint = "/v2/everything?q=Apple&from=2025-10-01&sortBy=popularity&apiKey=\(EnvironmentConfig.shared.apiKey)"
         let url = EnvironmentConfig.shared.baseUrl + endPoint
         AF.request(url,headers: headers).responseData {[weak self] response in
-            guard let self = self else { return }
+            guard let _ = self else { return }
             switch response.result{
                 case.success(let data):
                     if let jsonString = String(data: data, encoding: .utf8) {
