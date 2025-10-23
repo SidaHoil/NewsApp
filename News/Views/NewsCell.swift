@@ -22,7 +22,7 @@ class NewsCell: UITableViewCell {
         didSet{
             titleLabel.text = article.content
             if let url = article.urlToImage{
-                newsImageView.loadImage(from: url)
+                newsImageView.loadImage(from: url,placeholder: UIImage(named: "picture"))
             }
             dateLabel.text = article.publishedAt
             subTitleLabel.text = article.description
@@ -47,6 +47,7 @@ class NewsCell: UITableViewCell {
         subTitleLabel = UILabel(text: "Sub Title",numberOfLines: 3)
         
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         
         let stackView = UIStackView(subViews: [
             UIView(width: 3),
@@ -62,12 +63,19 @@ class NewsCell: UITableViewCell {
         ],distribution: .fillProportionally,spacing: 10)
         
         let view = UIView(style: CornerStyle.init(radius: 10, color: .gray,width: 0.18))
-        view.clipsToBounds = true
+        //view.clipsToBounds = true
+        
+        view.backgroundColor = .systemBackground
+        view.addShadow(color: .lightGray, opacity: 0.5, offset: .init(width: 0, height: 1), radius: 5, cornerRadius: 10)
+        
         contentView.addSubViewToFill(view, padding: .init(top: 5, left: 10, bottom: 5, right: 10))
         
         
         view.addSubViewToFill(stackView)
+        stackView.clipsToBounds = true
+        stackView.layer.cornerRadius = 10
         imageView?.clipsToBounds = true
+        
         newsImageView.setSize(width: 103, height: 103)
     }
     
