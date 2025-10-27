@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NewsViewController: UIViewController {
     private let cellId = "cell899"
     private var articles = [Article]()
     private let presenter = NewsPresenter(service: NetworkService())
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController:  UITableViewDataSource, UITableViewDelegate{
+extension NewsViewController:  UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
@@ -54,9 +54,12 @@ extension ViewController:  UITableViewDataSource, UITableViewDelegate{
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(NewsDetailViewController(article: articles[indexPath.row]), animated: true)
+    }
 }
 
-extension ViewController: NewsView{
+extension NewsViewController: NewsView{
     func showLoading() {
         print("Loading show.....")
     }

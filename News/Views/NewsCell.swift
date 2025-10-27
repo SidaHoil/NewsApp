@@ -8,15 +8,6 @@
 import UIKit
 import SwiftHelperInit
 
-extension UIView{
-    convenience init(style: CornerStyle){
-        self.init()
-        self.clipsToBounds = true
-        self.layer.cornerRadius = style.radius
-        self.layer.borderColor = style.color.cgColor
-        self.layer.borderWidth = style.width
-    }
-}
 class NewsCell: UITableViewCell {
     var article: Article!{
         didSet{
