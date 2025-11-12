@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkServiceProtocol{
-    func fetchNews(completion: @escaping (Result<[Article],Error>) -> ())
+    func fetchNews(date: String, completion: @escaping (Result<[Article],Error>) -> ())
 }

@@ -37,7 +37,8 @@ class NewsPresenter {
     
     func getNews(){
         view?.showLoading()
-        service.fetchNews { [weak self] result in
+        let date = getDate()
+        service.fetchNews(date: date) { [weak self] result in
             guard let self = self else { return }
             self.view?.hideLoading()
             switch result {
@@ -51,5 +52,20 @@ class NewsPresenter {
         }
     }
     
+    private func getDate() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        var formattedDate = ""
+        
+        let today = Date()
+        if let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: today) {
+            formattedDate = dateFormatter.string(from: yesterday)
+        }else{
+            let currentDate = Date()
+            formattedDate = dateFormatter.string(from: currentDate)
+        }
+        return formattedDate
+    }
     
 }

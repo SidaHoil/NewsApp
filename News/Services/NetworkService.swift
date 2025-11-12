@@ -9,10 +9,10 @@ import Foundation
 import Alamofire
  
 class NetworkService: NetworkServiceProtocol {
-    func fetchNews(completion: @escaping (Result<[Article], Error>) -> ()) {
+    func fetchNews(date: String, completion: @escaping (Result<[Article], Error>) -> ()) {
         let headers: HTTPHeaders = ["Content-Type":"application/json" ]
         
-        let endPoint = "/v2/everything?q=Apple&from=2025-10-01&sortBy=popularity&apiKey=\(EnvironmentConfig.shared.apiKey)"
+        let endPoint = "/v2/everything?q=Apple&from=\(date)&sortBy=popularity&apiKey=\(EnvironmentConfig.shared.apiKey)"
         let url = EnvironmentConfig.shared.baseUrl + endPoint
         AF.request(url,headers: headers).responseData {[weak self] response in
             guard let _ = self else { return }
