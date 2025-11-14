@@ -5,8 +5,7 @@ target 'News' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod "Alamofire"
-  pod 'SwiftHelperInit', :git => 'https://github.com/SidaHoil/SwiftHelperInit.git'
-
+  pod 'SVProgressHUD', '~> 2.3'
 
   # Pods for News
 

@@ -23,7 +23,7 @@ class NetworkService: NetworkServiceProtocol {
                     }
                     
                     do {
-                        let result = try JSONDecoder().decode(NewsResponse.self, from: data)
+                        let result = try JSONDecoder().decode(NewsResponseModel.self, from: data)
                         completion(.success(result.articles))
                     } catch {
                         print("DECODING ERROR:", error)

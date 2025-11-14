@@ -60,22 +60,9 @@ extension NewsViewController:  UITableViewDataSource, UITableViewDelegate{
 }
 
 extension NewsViewController: NewsView{
-    func showLoading() {
-        print("Loading show.....")
-    }
-    
-    func hideLoading() {
-        print("Loading hide....")
-    }
     
     func showNews(_ articles: [Article]) {
         self.articles = articles
         tableView.reloadData()
     }
-    
-    func showError(_ message: String) {
-        print(message)
-    }
-    
-    
 }

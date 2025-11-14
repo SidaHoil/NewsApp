@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F21BCA22EC4C39B0069E813 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21BCA12EC4C39B0069E813 /* BasePresenter.swift */; };
 		1F247C322EA7CBA200F2F79C /* SwiftHelperInit in Frameworks */ = {isa = PBXBuildFile; productRef = 1F247C312EA7CBA200F2F79C /* SwiftHelperInit */; };
-		1F403F4A2E9FAF0C00E6A4B9 /* NewsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F403F492E9FAF0C00E6A4B9 /* NewsResponse.swift */; };
+		1F28334C2EC6A6C40068ABE4 /* NewsResponse.json in Sources */ = {isa = PBXBuildFile; fileRef = 1F28334B2EC6A6C40068ABE4 /* NewsResponse.json */; };
+		1F28334F2EC6AA140068ABE4 /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F28334E2EC6AA140068ABE4 /* LoadingManager.swift */; };
+		1F403F4A2E9FAF0C00E6A4B9 /* NewsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F403F492E9FAF0C00E6A4B9 /* NewsResponseModel.swift */; };
 		1F403F4C2E9FB03400E6A4B9 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F403F4B2E9FB03400E6A4B9 /* NetworkServiceProtocol.swift */; };
 		1F403F4E2E9FB19700E6A4B9 /* EnvironmentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F403F4D2E9FB19700E6A4B9 /* EnvironmentConfig.swift */; };
 		1F403F502E9FC76C00E6A4B9 /* ConfigurationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F403F4F2E9FC76C00E6A4B9 /* ConfigurationProtocol.swift */; };
@@ -55,7 +58,10 @@
 		0DD04356059D5D246FC6BBF5 /* Pods-NewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsTests.debug.xcconfig"; path = "Target Support Files/Pods-NewsTests/Pods-NewsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		112566BD52C12553F7CDD8EB /* Pods-News.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.staging.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.staging.xcconfig"; sourceTree = "<group>"; };
 		1E78D2D6168C0FCD8D55F71D /* Pods-News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.release.xcconfig"; path = "Target Support Files/Pods-News/Pods-News.release.xcconfig"; sourceTree = "<group>"; };
-		1F403F492E9FAF0C00E6A4B9 /* NewsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponse.swift; sourceTree = "<group>"; };
+		1F21BCA12EC4C39B0069E813 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		1F28334B2EC6A6C40068ABE4 /* NewsResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NewsResponse.json; sourceTree = "<group>"; };
+		1F28334E2EC6AA140068ABE4 /* LoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
+		1F403F492E9FAF0C00E6A4B9 /* NewsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponseModel.swift; sourceTree = "<group>"; };
 		1F403F4B2E9FB03400E6A4B9 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		1F403F4D2E9FB19700E6A4B9 /* EnvironmentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfig.swift; sourceTree = "<group>"; };
 		1F403F4F2E9FC76C00E6A4B9 /* ConfigurationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProtocol.swift; sourceTree = "<group>"; };
@@ -133,6 +139,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1F28334A2EC6A6A30068ABE4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F28334B2EC6A6C40068ABE4 /* NewsResponse.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1F28334D2EC6AA050068ABE4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1F28334E2EC6AA140068ABE4 /* LoadingManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		1F403F5B2E9FDEA600E6A4B9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,9 +189,11 @@
 		1F66AE962E9F5A8A0083C791 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				1F28334D2EC6AA050068ABE4 /* Utils */,
+				1F28334A2EC6A6A30068ABE4 /* Resources */,
 				1F403F5B2E9FDEA600E6A4B9 /* Controllers */,
 				1FE340CC2E9F8ED100C88304 /* Services */,
-				1FE340CB2E9F8E0A00C88304 /* Presentors */,
+				1FE340CB2E9F8E0A00C88304 /* Presenters */,
 				1FE340CA2E9F8E0300C88304 /* Views */,
 				1FE340C92E9F8DFA00C88304 /* Models */,
 				1F66AECA2E9F5AAC0083C791 /* Configuration */,
@@ -219,7 +243,7 @@
 		1FE340C92E9F8DFA00C88304 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1F403F492E9FAF0C00E6A4B9 /* NewsResponse.swift */,
+				1F403F492E9FAF0C00E6A4B9 /* NewsResponseModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,12 +256,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		1FE340CB2E9F8E0A00C88304 /* Presentors */ = {
+		1FE340CB2E9F8E0A00C88304 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
 				1F403F572E9FD95300E6A4B9 /* NewsPresenter.swift */,
+				1F21BCA12EC4C39B0069E813 /* BasePresenter.swift */,
 			);
-			path = Presentors;
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		1FE340CC2E9F8ED100C88304 /* Services */ = {
@@ -511,9 +536,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F403F502E9FC76C00E6A4B9 /* ConfigurationProtocol.swift in Sources */,
+				1F21BCA22EC4C39B0069E813 /* BasePresenter.swift in Sources */,
+				1F28334F2EC6AA140068ABE4 /* LoadingManager.swift in Sources */,
 				1F66AE9C2E9F5A8A0083C791 /* NewsViewController.swift in Sources */,
 				1F66AE982E9F5A8A0083C791 /* AppDelegate.swift in Sources */,
 				1F403F542E9FC7C100E6A4B9 /* StagingConfig.swift in Sources */,
+				1F28334C2EC6A6C40068ABE4 /* NewsResponse.json in Sources */,
 				1F403F522E9FC79F00E6A4B9 /* DevelopmentConfig.swift in Sources */,
 				1F66AEA22E9F5A8A0083C791 /* News.xcdatamodeld in Sources */,
 				1F403F562E9FC7E500E6A4B9 /* ProductionConfig.swift in Sources */,
@@ -522,7 +550,7 @@
 				1F48BA9C2EAF9A6400BD46F3 /* NewsDetailViewController.swift in Sources */,
 				1FE340CE2E9F8EE400C88304 /* NetworkService.swift in Sources */,
 				1F403F4E2E9FB19700E6A4B9 /* EnvironmentConfig.swift in Sources */,
-				1F403F4A2E9FAF0C00E6A4B9 /* NewsResponse.swift in Sources */,
+				1F403F4A2E9FAF0C00E6A4B9 /* NewsResponseModel.swift in Sources */,
 				1F403F582E9FD95300E6A4B9 /* NewsPresenter.swift in Sources */,
 				1F403F4C2E9FB03400E6A4B9 /* NetworkServiceProtocol.swift in Sources */,
 			);
